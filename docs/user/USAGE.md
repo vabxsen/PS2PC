@@ -1,6 +1,6 @@
 # Relinker usage
 
-[**Online relinker**](https://boykopovar.github.io/AnyPS5/) - files stay on your device.
+[**Online relinker**](https://vabxsen.github.io/PS2PC/) - files stay on your device.
 
 ### Browser folder output
 

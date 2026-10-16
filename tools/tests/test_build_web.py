@@ -45,7 +45,7 @@ class LibraryPublicationTests(unittest.TestCase):
                            "digest": "sha256:" + hashlib.sha256(data).hexdigest(), "browser_download_url": url})
             responses[url] = data
         release = {"tag_name": "v1", "html_url": "https://example.invalid/v1", "assets": assets}
-        responses["https://api.github.com/repos/boykopovar/AnyPS5/releases/latest"] = json.dumps(release).encode()
+        responses["https://api.github.com/repos/vabxsen/PS2PC/releases/latest"] = json.dumps(release).encode()
         with patch.object(build_web, "request", side_effect=lambda url: io.BytesIO(responses[url])), \
                 contextlib.redirect_stdout(io.StringIO()):
             build_web.publish_libraries(self.output)

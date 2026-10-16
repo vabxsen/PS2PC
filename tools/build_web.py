@@ -20,7 +20,7 @@ def copy_sources(output):
 
 
 def request(url):
-    headers = {"User-Agent": "AnyPS5-Pages"}
+    headers = {"User-Agent": "PS2PC-Pages"}
     token = os.environ.get("GITHUB_TOKEN")
     if token and url.startswith("https://api.github.com/"):
         headers["Authorization"] = f"Bearer {token}"
@@ -28,7 +28,7 @@ def request(url):
 
 
 def publish_libraries(output):
-    with request("https://api.github.com/repos/boykopovar/AnyPS5/releases/latest") as response:
+    with request("https://api.github.com/repos/vabxsen/PS2PC/releases/latest") as response:
         release = json.load(response)
     tag = release["tag_name"]
     if not re.fullmatch(r"v[0-9A-Za-z][0-9A-Za-z._-]*", tag):

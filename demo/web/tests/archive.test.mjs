@@ -192,7 +192,7 @@ const originalFetch = globalThis.fetch;
 let latestResponse = new Response(null, { status: 403, headers: { "X-RateLimit-Remaining": "0" } });
 globalThis.fetch = async url => {
   if (url === "./release.json") return new Response(JSON.stringify(release));
-  if (url === "https://api.github.com/repos/boykopovar/AnyPS5/releases/latest") return latestResponse;
+  if (url === "https://api.github.com/repos/vabxsen/PS2PC/releases/latest") return latestResponse;
   if (url === libraryPath) return new Response(libraryBytes);
   throw new Error(`Unexpected fetch: ${url}`);
 };

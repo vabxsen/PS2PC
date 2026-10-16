@@ -22,7 +22,7 @@ export async function downloadLibraries(target) {
   const release = await response.json();
   const asset = release.platforms[target];
   if (!asset || !/^libraries\/(windows|linux)-[a-f0-9]+\.zip$/u.test(asset.path) || !/^[a-f0-9]{64}$/u.test(asset.sha256)) throw new Error("Invalid release manifest");
-  const latestResponse = await fetch("https://api.github.com/repos/boykopovar/AnyPS5/releases/latest", { headers: { Accept: "application/vnd.github+json" } });
+  const latestResponse = await fetch("https://api.github.com/repos/vabxsen/PS2PC/releases/latest", { headers: { Accept: "application/vnd.github+json" } });
   if (!latestResponse.ok) {
     const rateLimited = latestResponse.status === 429 || (latestResponse.status === 403 && latestResponse.headers.get("x-ratelimit-remaining") === "0");
     if (!rateLimited) throw new Error(`Cannot verify the latest release (${latestResponse.status}). Try again later.`);

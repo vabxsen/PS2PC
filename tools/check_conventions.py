@@ -476,4 +476,4 @@ if __name__ == "__main__":
         check.pull_request(pr["title"], pr["body"])
     elif args.title is not None or args.body:
         check.pull_request(args.title or "", open(args.body, encoding="utf-8-sig").read() if args.body else "")
-    raise SystemExit(output(check, os.environ.get("GITHUB_REPOSITORY", "boykopovar/AnyPS5")))
+    raise SystemExit(output(check, os.environ.get("GITHUB_REPOSITORY", "vabxsen/PS2PC")))
