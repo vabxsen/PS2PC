@@ -54,7 +54,7 @@ jobs:
       full: ${{ steps.gate.outputs.full }}
       relinker-hosts: ${{ steps.gate.outputs.relinker-hosts }}
     steps:
-      - uses: actions/github-script@v8
+      - uses: actions/github-script@v9
         id: gate
         env:
           PR_NUMBER: ${{ inputs.pr }}
@@ -407,7 +407,7 @@ jobs:
           curl -sSfL -o "$RUNNER_TEMP/winlibs.zip" "https://github.com/brechtsanders/winlibs_mingw/releases/download/$WINLIBS_RELEASE/$WINLIBS_ZIP"
           7z x "$RUNNER_TEMP/winlibs.zip" -oC:/winlibs > /dev/null
       - run: echo 'C:\winlibs\mingw64\bin' >> "$GITHUB_PATH"
-      - uses: hendrikmuhs/ccache-action@v1.2.24
+      - uses: hendrikmuhs/ccache-action@v1.2.25
         with:
           key: windows
           save: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
